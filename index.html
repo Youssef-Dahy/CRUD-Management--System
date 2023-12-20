@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <!-- Font-awesome CSS -->
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <!-- Customize CSS -->
+    <link rel="stylesheet" href="assets/css/crudsstyle.css" />
+  </head>
+  <body>
+    <!-- Start of CRUDS Operations Header -->
+
+    <!-- End of CRUDS Operations Header -->
+
+    <!-- Start of CRUDS Operations Body -->
+    <div class="container shadow">
+      <div class="w-75 mx-auto">
+        <header class="mb-3">
+          <div class="container py-3 pl-4 border-bottom border-dark">
+            <h2 class="text-center">
+              <span>C</span>
+              <span>R</span>
+              <span>U</span>
+              <span>D</span>
+              <!-- <span>S</span>
+              <span>Y</span>
+              <span>S</span>
+              <span>T</span>
+              <span>E</span>
+              <span>M</span> -->
+            </h2>
+          </div>
+        </header>
+        <div class="form-group mb-3">
+          <label for="productName" class="mb-2 h5">productName:</label>
+          <input
+            oninput="validateProductName()"
+            type="text"
+            id="productName"
+            class="form-control"
+            placeholder="Enter Product Name"
+            required
+          />
+          <div id="errorMassage" class="alert alert-danger d-none">
+            Product Name Must Start with Capital Letter
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="productPrice" class="mb-2 h5">productPrice:</label>
+          <input
+            oninput="validateProductPrice()"
+            type="number"
+            id="productPrice"
+            class="form-control"
+            placeholder="Enter Product Price"
+            required
+          />
+          <div id="errorMassagePrice" class="alert alert-danger d-none">
+            Product Price must be between 1-65000.
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="productCategory" class="mb-2 h5">productCategory:</label>
+          <input
+            oninput="validateProductCategory()"
+            type="text"
+            id="productCategory"
+            class="form-control"
+            placeholder="Enter Product Category"
+            required
+          />
+          <div id="errorMassageCategory" class="alert alert-danger d-none">
+            Product Category must laptop,TV,phone and Watch
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="productDescription" class="mb-2 h5"
+            >productDescription:</label
+          >
+          <textarea
+            oninput="validateProductDescription()"
+            name="productDescription"
+            id="productDescription"
+            class="form-control"
+          ></textarea>
+          <div id="errorMassageDescription" class="alert alert-danger d-none">
+            product description must be at least 100 characters
+          </div>
+        </div>
+        <button id="addbtn" onclick="addProduct()" class="btn-product mb-4">
+          <span>Add Product</span><i></i>
+        </button>
+        <button
+          id="updatabtn"
+          onclick="updateProduct()"
+          class="btn-product-update mb-4 d-none"
+        >
+          <span>Update Product</span><i></i>
+        </button>
+        <div class="outputs">
+          <div class="form-group mb-3">
+            <label for="search" class="mb-2">Search:</label>
+            <input
+              oninput="searchAboutData(this.value)"
+              type="search"
+              id="search"
+              class="form-control"
+              placeholder="Search"
+              required
+            />
+          </div>
+        </div>
+        <div id="deleteAll"></div>
+      </div>
+      <table class="table table-secondary w-75 mx-auto text-center">
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>productName</th>
+            <th>productPrice</th>
+            <th>productCategory</th>
+            <th>productDescription</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyTable"></tbody>
+      </table>
+    </div>
+    <!-- End of CRUDS Operations Body -->
+    <script src="assets/js/all.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
